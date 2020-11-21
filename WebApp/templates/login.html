@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Login Page {% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+{% block nav %}
+
+{% endblock %}
+<!-- creating a form from the template defined in forms.py -->
+
+
+<div class="container my-5" style="display:flex; flex-direction:column">
+
+    {% from "includes/_formhelper.html" import render_field %}
+
+    <div class="container my-3">
+
+       <a href="/"><img style="display:block;
+        margin:auto;" src="{{url_for('static',filename='/images/bot-login-1.jpg')}}" alt="" width="160" height="160"></a>
+
+    </div>
+
+    <form style="    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    background-color: #f5f5f5;
+  
+    margin: auto;" method=post action=" ">
+
+        <div class="form-group ">
+            {{ render_field(form.username,class='form-control') }}
+        </div>
+
+
+        {{ render_field(form.password,class='form-control') }}
+
+
+
+        <div class="conatiner p-1">
+
+
+            <!-- <button type="submit" class="mt-3 btn btn-primary">Login</button> -->
+            <button class="mt-3 btn btn-md btn-primary btn-block" type="submit">Sign in</button>
+            <div class="my-2 text-center">
+
+                Don't have an account <a href="/register" class=" text-primary">Register</a> here
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+</div>
+
+
+</form>
+
+
+
+
+
+{% endblock %}
+
+{% block footer %} {% endblock %}
+
+
+
+</div>

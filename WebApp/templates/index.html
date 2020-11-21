@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+
+{% block title %}RPA ASSISTANT{% endblock %}
+
+{% block body %}
+<!-- <div style="background-image: url('../static/snow.gif'); position: absolute;top:0px;left:0px;z-index:2;"> -->
+
+</div>
+
+
+
+<div class="jumbotron container my-4">
+  <div class="col-sm-8 mx-auto">
+    <h1 style="font-family: 'Carter One', cursive;">RPA Faculty Assistant</h1>
+    <p>Robotics Process Automation allows organizations to automate task just like a human being was doing them across
+      application and systems. The main goal of Robotics process automation process to replace repetitive and boring
+      clerical task performed by humans, with a virtual workforce.</p>
+    <p>
+      <a class="btn btn-primary" href="/register" role="button">Register &raquo;</a>
+    </p>
+  </div>
+</div>
+<div class="container">
+
+  <img src="{{ url_for('static',filename='/images/rpa_homepage.gif')}}" class="img-fluid" />
+</div>
+
+
+
+
+{% endblock %}

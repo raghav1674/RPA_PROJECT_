@@ -1,0 +1,10 @@
+flask
+Flask-SQLAlchemy
+Flask-WTF
+pandas
+numpy
+matplotlib
+dateutils
+dash
+dash_bootstrap_components
+plotly

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+
+{% block title %} Add Task Page {% endblock %}
+
+{% block body %}
+
+<!-- creating a form from the template defined in forms.py -->
+
+{% from "includes/_formhelper.html" import render_field %}
+<div class="container my-4">
+  <form method=post action=" ">
+    <div class="form-group">
+      {{ render_field(form.name,class='form-control') }}
+    </div>
+    
+      {{ render_field(form.description,class='form-control') }}
+
+  
+      {{ render_field(form.sheet_url,class='form-control')}}
+     
+      {{ render_field(form.sheet_name,class='form-control') }}
+
+      {{ render_field(form.start_date,class='form-control') }}
+
+
+      {{ render_field(form.end_date,class='form-control') }}
+      
+      
+      
+
+
+   
+      {{ render_field(form.bot_assigned,class='form-check') }}
+    
+      <button type="submit" class="btn btn-primary">Assign Task</button>
+
+  </div>
+
+    
+
+  </form>
+</div>
+
+{% endblock %}
+

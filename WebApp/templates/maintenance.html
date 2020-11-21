@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Maintenance Page {% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+{% block nav %}
+
+{% endblock %}
+<!-- creating a form from the template defined in forms.py -->
+<center>
+
+
+
+
+
+ <div class="container">
+
+
+    <img src="{{url_for('static',filename='images/maintenance-3.gif')}}" class="my-3"  >
+ </div>
+
+
+
+    <div class="text-center " >
+
+        <h4 class="text-dark font-weight-bold text-lg">Site Under Maintenance </h4>
+    
+        <h5 class="text-secondary ">We are preparing to serve you better!!</h5>
+    
+    </div>
+    <a href="/" class="btn btn-primary">Go to Home</a>
+</center>
+{% endblock %}
+
+{% block footer %} {% endblock %}
+
+
+

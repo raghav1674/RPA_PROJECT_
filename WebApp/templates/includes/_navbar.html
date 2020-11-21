@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    
+          <a href="#"><img src="{{ url_for('static',filename='images/brand-robo.png') }}" height=50 width=50 alt="brand-robo" class="rounded-circle"></a>
+      
+    <a class="navbar-brand" href="/">RPA Assistant</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06"
+        aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample06">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item active">
+                <a class="nav-link" href="/services" tabindex="-1" >Services</a>
+            </li> -->
+            {% if session.logged_in %}
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard/1">Dashboard</a>
+            </li>
+
+            
+            {% endif %}
+           
+              
+                    <li class="nav-item active ml-4"> <a class="nav-link" > MODEL INSTITUTE OF ENGINEERING AND TECHNOLOGY</a>
+                    </li>
+          
+
+            </div>
+          
+
+
+        <!-- </ul> -->
+
+
+
+        <ul class="nav navbar-nav navbar-right" >
+
+            <!-- only showing the log in if user is logged out  -->
+
+            {% if session.logged_in %}
+
+         
+            <li class="nav-item dropdown mr-4">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-file-excel-o"></i> Excel Template
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('static',filename='files/template_monitor.xlsx')}}" download="example-monitor-excel.xlsx">Monitor Excel Template</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('static',filename='files/template_document.xlsx')}}" download="example-document-detection.xlsx">Document Detection Template</a>
+                  
+                  
+                </div>
+              </li>
+            <li>
+                <a class="nav-link mr-1" href="/logout">Logout</a>
+            </li>
+            
+
+            {% else %}
+            
+            <li>
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+
+            {% endif %}
+        </ul>
+
+    </ul>
+    </div>
+</nav>
