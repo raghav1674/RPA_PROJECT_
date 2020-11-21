@@ -9,38 +9,38 @@
         - Samar Kant Bhasin
         - Sahil Singh
 
-- [MAIN APP FILE](https://github.com/raghav1674/RPA/tree/master/WebApp/app.py)
+- [MAIN APP FILE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/app.py)
 
-- [FORM CLASS FILES](https://github.com/raghav1674/RPA/tree/master/WebApp/forms.py)
+- [FORM CLASS FILES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/forms.py)
 
-- [GRAPH PROGRAM](https://github.com/raghav1674/RPA/tree/master/WebApp/graph.py)
+- [GRAPH PROGRAM](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/graph.py)
    
-- [SCHEDULING PROGRAM](https://github.com/raghav1674/RPA/tree/master/WebApp/apis/sched.py)
+- [SCHEDULING PROGRAM](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/apis/sched.py)
 
 
-- [TEMPLATES](https://github.com/raghav1674/RPA/tree/master/WebApp/templates)
+- [TEMPLATES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates)
 
-    - [HOMEPAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/index.html)
+    - [HOMEPAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/index.html)
 
-    - [LOGIN PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/login.html)
+    - [LOGIN PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/login.html)
 
-    - [REGISTER PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/register.html)
+    - [REGISTER PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/register.html)
 
-    - [ASSIGN TASK PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/task.html)
+    - [ASSIGN TASK PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/task.html)
 
-    - [DASHBOARD PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/dashboard.html)
+    - [DASHBOARD PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/dashboard.html)
 
-    - [CUSTOM 404 PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/404.html)
+    - [CUSTOM 404 PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/404.html)
  
-- [STATIC FILES](https://github.com/raghav1674/RPA/tree/master/WebApp/static)
+- [STATIC FILES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/static)
 
-[BOTS](https://github.com/raghav1674/RPA/tree/master/Bots/)
+[BOTS](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/Bots/)
     
     - EXCEL MONITOR 
     - SYNOPSIS DOCUMENT DETECTION
     - PPT DOCUMENT DETECTION
 
-- **DATABASE**: [mysql](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/db)
+- **DATABASE**: [mysql](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/db)
 
             - tasks table
             - users table
