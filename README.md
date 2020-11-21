@@ -34,7 +34,7 @@
  
 - [STATIC FILES](https://github.com/raghav1674/RPA/tree/master/WebApp/static)
 
-[BOTS](https://github.com/raghav1674/RPA/tree/master/bots)
+[BOTS](https://github.com/raghav1674/RPA/tree/master/Bots/)
     
     - EXCEL MONITOR 
     - SYNOPSIS DOCUMENT DETECTION
