@@ -9,38 +9,38 @@
         - Samar Kant Bhasin
         - Sahil Singh
 
-- [MAIN APP FILE](https://github.com/raghav1674/RPA_PROJECT/blob/master/app.py)
+- [MAIN APP FILE](https://github.com/raghav1674/RPA/tree/master/WebApp/app.py)
 
-- [FORM CLASS FILES](https://github.com/raghav1674/RPA_PROJECT/blob/master/forms.py)
+- [FORM CLASS FILES](https://github.com/raghav1674/RPA/tree/master/WebApp/forms.py)
 
-- [GRAPH PROGRAM](https://github.com/raghav1674/RPA_PROJECT/blob/master/graph.py)
+- [GRAPH PROGRAM](https://github.com/raghav1674/RPA/tree/master/WebApp/graph.py)
    
-- [SCHEDULING PROGRAM](https://github.com/raghav1674/RPA_PROJECT/blob/master/apis/sched.py)
+- [SCHEDULING PROGRAM](https://github.com/raghav1674/RPA/tree/master/WebApp/apis/sched.py)
 
 
-- [TEMPLATES](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates)
+- [TEMPLATES](https://github.com/raghav1674/RPA/tree/master/WebApp/templates)
 
-    - [HOMEPAGE](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates/index.html)
+    - [HOMEPAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/index.html)
 
-    - [LOGIN PAGE](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates/login.html)
+    - [LOGIN PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/login.html)
 
-    - [REGISTER PAGE](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates/register.html)
+    - [REGISTER PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/register.html)
 
-    - [ASSIGN TASK PAGE](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates/task.html)
+    - [ASSIGN TASK PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/task.html)
 
-    - [DASHBOARD PAGE](https://github.com/raghav1674/RPA_PROJECT/blob/raghav_second/templates/dashboard.html)
+    - [DASHBOARD PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/dashboard.html)
 
-    - [CUSTOM 404 PAGE](https://github.com/raghav1674/RPA_PROJECT/blob/master/templates/404.html)
+    - [CUSTOM 404 PAGE](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/404.html)
  
-- [STATIC FILES](https://github.com/raghav1674/RPA_PROJECT/blob/master/static)
+- [STATIC FILES](https://github.com/raghav1674/RPA/tree/master/WebApp/static)
 
-[BOTS](https://github.com/raghav1674/RPA_PROJECT/blob/master/bots)
+[BOTS](https://github.com/raghav1674/RPA/tree/master/bots)
     
     - EXCEL MONITOR 
     - SYNOPSIS DOCUMENT DETECTION
     - PPT DOCUMENT DETECTION
 
-- **DATABASE**: [mysql](https://github.com/raghav1674/RPA_PROJECT/blob/master/db)
+- **DATABASE**: [mysql](https://github.com/raghav1674/RPA/tree/master/WebApp/templates/db)
 
             - tasks table
             - users table
