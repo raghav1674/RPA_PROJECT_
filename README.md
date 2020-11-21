@@ -40,7 +40,7 @@
     - SYNOPSIS DOCUMENT DETECTION
     - PPT DOCUMENT DETECTION
 
-- **DATABASE**: [mysql](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/db)
+- **DATABASE**: [mysql](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/db)
 
             - tasks table
             - users table
