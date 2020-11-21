@@ -1011,19 +1011,6 @@
           "build/_._": {}
         }
       },
-      "UiPath.Activities.Api/20.4.0": {
-        "type": "package",
-        "compile": {
-          "lib/net452/_._": {}
-        },
-        "runtime": {
-          "lib/net452/UiPath.Activities.Api.Base.dll": {},
-          "lib/net452/UiPath.Api.Base.dll": {},
-          "lib/net452/UiPath.Robot.Activities.Api.dll": {},
-          "lib/net452/UiPath.Studio.Activities.Api.dll": {},
-          "lib/net452/UiPath.Studio.Api.Base.dll": {}
-        }
-      },
       "UiPath.ComplexScenarios.Activities/1.1.3": {
         "type": "package",
         "compile": {
@@ -2507,20 +2494,6 @@
           "lib/net45/UiPathTeam.Office.Comments.Activities.Design.dll": {},
           "lib/net45/UiPathTeam.Office.Comments.Activities.dll": {},
           "lib/net45/UiPathTeam.Office.Comments.dll": {}
-        }
-      },
-      "UiPathTeam.OrchestratorTasksAPIHelper/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "UiPath.System.Activities": "19.10.1",
-          "UiPath.UIAutomation.Activities": "19.10.1",
-          "UiPath.WebAPI.Activities": "1.4.4"
-        },
-        "compile": {
-          "lib/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/UiPathTeam.OrchestratorTasksAPIHelper.dll": {}
         }
       }
     }
@@ -4185,34 +4158,6 @@
         "uipath.nuspec"
       ]
     },
-    "UiPath.Activities.Api/20.4.0": {
-      "sha512": "EnPiXfcUV8uNIkMEyzDSbdC1M9mvIwG5Vgannw7lFZtrsvKysVA6zcY+ZZ5ZK/BSjxwLPYtDDw85L0ZOQbm20Q==",
-      "type": "package",
-      "path": "uipath.activities.api/20.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/UiPath.Activities.Api.Base.dll",
-        "lib/net452/UiPath.Activities.Api.Base.pdb",
-        "lib/net452/UiPath.Activities.Api.Base.xml",
-        "lib/net452/UiPath.Api.Base.dll",
-        "lib/net452/UiPath.Api.Base.pdb",
-        "lib/net452/UiPath.Api.Base.xml",
-        "lib/net452/UiPath.Api.Package.pdb",
-        "lib/net452/UiPath.Api.Package.xml",
-        "lib/net452/UiPath.Robot.Activities.Api.dll",
-        "lib/net452/UiPath.Robot.Activities.Api.pdb",
-        "lib/net452/UiPath.Robot.Activities.Api.xml",
-        "lib/net452/UiPath.Studio.Activities.Api.dll",
-        "lib/net452/UiPath.Studio.Activities.Api.pdb",
-        "lib/net452/UiPath.Studio.Activities.Api.xml",
-        "lib/net452/UiPath.Studio.Api.Base.dll",
-        "lib/net452/UiPath.Studio.Api.Base.pdb",
-        "lib/net452/UiPath.Studio.Api.Base.xml",
-        "uipath.activities.api.20.4.0.nupkg.sha512",
-        "uipath.activities.api.nuspec"
-      ]
-    },
     "UiPath.ComplexScenarios.Activities/1.1.3": {
       "sha512": "rGbOA/Z4MPDCO5Hz6SyE6j/RGACuh2ljzwCOpBWGj3c+XQohd+0oi69qyGFHpPhc4Pa8fxutcC16zNgwh+la9A==",
       "type": "package",
@@ -5016,22 +4961,6 @@
         "uipathteam.office.comments.activities.1.0.0.nupkg.sha512",
         "uipathteam.office.comments.activities.nuspec"
       ]
-    },
-    "UiPathTeam.OrchestratorTasksAPIHelper/1.0.0": {
-      "sha512": "gKy6NTbCZLUvcHXclRkZoZMBHwGodoiKoKXZsr65rR3LaZFQm630L6wAlLvWUwKmzEESzTSEdQhT6Au9Kwms6w==",
-      "type": "package",
-      "path": "uipathteam.orchestratortasksapihelper/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "lib/net45/.settings/Release/settings-1a5b880a.json",
-        "lib/net45/.settings/Release/settings-5190454b.json",
-        "lib/net45/.settings/Release/settings-590bb27b.json",
-        "lib/net45/.settings/Release/settings-9e9290da.json",
-        "lib/net45/UiPathTeam.OrchestratorTasksAPIHelper.dll",
-        "lib/net45/project.json",
-        "uipathteam.orchestratortasksapihelper.1.0.0.nupkg.sha512",
-        "uipathteam.orchestratortasksapihelper.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -5044,7 +4973,6 @@
       "Google.Apis.Sheets.v4 >= 1.43.0.1867 <= 1.43.0.1867",
       "GoogleSpreadsheet.Activities >= 1.0.7495.12930 <= 1.0.7495.12930",
       "KanadCharting.Activities >= 1.0.0 <= 1.0.0",
-      "UiPath.Activities.Api >= 20.4.0 <= 20.4.0",
       "UiPath.ComplexScenarios.Activities >= 1.1.3 <= 1.1.3",
       "UiPath.Database.Activities >= 1.3.7369.25200 <= 1.3.7369.25200",
       "UiPath.Excel.Activities >= 2.9.3 <= 2.9.3",
@@ -5057,8 +4985,7 @@
       "UiPath.WebAPI.Activities >= 1.6.0 <= 1.6.0",
       "UiPath.Word.Activities >= 1.5.3 <= 1.5.3",
       "UiPathTeam.Excel.Extensions.Activities >= 1.0.7107.42453 <= 1.0.7107.42453",
-      "UiPathTeam.Office.Comments.Activities >= 1.0.0 <= 1.0.0",
-      "UiPathTeam.OrchestratorTasksAPIHelper >= 1.0.0 <= 1.0.0"
+      "UiPathTeam.Office.Comments.Activities >= 1.0.0 <= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5068,9 +4995,9 @@
     "restore": {
       "projectUniqueName": "NewBlankTask",
       "projectName": "NewBlankTask",
-      "projectPath": "D:\\c_data\\future\\MYPROJECTS\\RPA\\sahil_and_all_basics-20201113T085914Z-001\\sahil_and_all_basics\\.local",
+      "projectPath": "D:\\c_data\\future\\MYPROJECTS\\RPA\\sahil_and_all_basics\\.local",
       "packagesPath": "C:\\Users\\Raghav Gupta\\.nuget\\packages\\",
-      "outputPath": "D:\\c_data\\future\\MYPROJECTS\\RPA\\sahil_and_all_basics-20201113T085914Z-001\\sahil_and_all_basics\\.local"
+      "outputPath": "D:\\c_data\\future\\MYPROJECTS\\RPA\\sahil_and_all_basics\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5109,11 +5036,6 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[1.0.0, 1.0.0]"
-          },
-          "UiPath.Activities.Api": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[20.4.0, 20.4.0]"
           },
           "UiPath.ComplexScenarios.Activities": {
             "include": "Runtime",
@@ -5176,11 +5098,6 @@
             "version": "[1.0.7107.42453, 1.0.7107.42453]"
           },
           "UiPathTeam.Office.Comments.Activities": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.0.0, 1.0.0]"
-          },
-          "UiPathTeam.OrchestratorTasksAPIHelper": {
             "include": "Runtime",
             "target": "Package",
             "version": "[1.0.0, 1.0.0]"

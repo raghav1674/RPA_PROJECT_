@@ -1,20 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence1" this:Sequence1.sheet="CSEA2_ProjectsList" this:Sequence1.root_data_path="D:\c_data\future\MYPROJECTS\RPA\PROJECT_RPA\data\" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ug="clr-namespace:UiPath.GSuite;assembly=UiPath.GSuite" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence1" this:Sequence1.sheet="CSEA2_ProjectsList" this:Sequence1.sheet_url="https://docs.google.com/spreadsheets/d/1RrCmzuwVYNueSRbGKhM5HknGjCsLgRzkEceuGryGU6A/edit#gid=758774731" this:Sequence1.faculty_mail_id="umang.75-cse-17@mietjammu.in" this:Sequence1.root_data_dir="D:\c_data\future\MYPROJECTS\RPA\PROJECT_RPA\data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ug="clr-namespace:UiPath.GSuite;assembly=UiPath.GSuite" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="sheet" Type="InArgument(x:String)" />
     <x:Property Name="sheet_url" Type="InArgument(x:String)" />
     <x:Property Name="faculty_mail_id" Type="InArgument(x:String)" />
-    <x:Property Name="sheet" Type="InArgument(x:String)" />
-    <x:Property Name="start_date" Type="InArgument(s:DateTime)" />
-    <x:Property Name="end_date" Type="InArgument(s:DateTime)" />
+    <x:Property Name="root_data_dir" Type="InArgument(x:String)" />
     <x:Property Name="task_id" Type="InArgument(x:Int32)" />
-    <x:Property Name="root_data_path" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1984.8,5587.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1680,4349.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sequence1_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="68">
+    <scg:List x:TypeArguments="x:String" Capacity="136">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -81,12 +79,14 @@
       <x:String>UiPath.Mail</x:String>
       <x:String>UiPath.Mail.SMTP.Activities</x:String>
       <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
       <x:String>UiPath.CSV</x:String>
       <x:String>UiPath.CSV.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="53">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="110">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -140,33 +140,36 @@
       <AssemblyReference>KanadCharting.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1995.2,5382.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+  <Sequence sap:VirtualizedContainerService.HintSize="1690.4,4184.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="new_data_out" />
       <Variable x:TypeArguments="sd:DataTable" Name="synop" />
-      <Variable x:TypeArguments="x:String" Name="email_dum" />
       <Variable x:TypeArguments="x:String" Name="o" />
-      <Variable x:TypeArguments="x:Boolean" Name="ispresent" />
+      <Variable x:TypeArguments="x:String" Default="Synopsis" Name="file_match" />
+      <Variable x:TypeArguments="x:String" Name="status" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="con" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1953.6,4498.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence sap:VirtualizedContainerService.HintSize="1648.8,3418.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="x" />
         <Variable x:TypeArguments="s:String[]" Name="gsheet_id" />
-        <Variable x:TypeArguments="x:String" Default="https://docs.google.com/spreadsheets/d/1RrCmzuwVYNueSRbGKhM5HknGjCsLgRzkEceuGryGU6A/edit#gid=758774731" Name="gsheet_url" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="1912,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign sap:VirtualizedContainerService.HintSize="1607.2,60" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[gsheet_id]</OutArgument>
         </Assign.To>
@@ -174,29 +177,7 @@
           <InArgument x:TypeArguments="s:String[]">[Split(sheet_url,"/")]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1912,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DatabaseConnect.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Int32" x:Key="task_id">
-            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="task_id" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="status">
-            <Literal x:TypeArguments="x:String">AC</Literal>
-          </InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1912,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_28">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_18" Text="[gsheet_id(5)]" />
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <uga:GSuiteApplicationScope ApiKey="{x:Null}" ContinueOnError="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="OAuthClientID" CredentialID="392324365050-o5m38vib04p5h99293krh6450eerktl1.apps.googleusercontent.com" CredentialSecret="aE_-IZUvNdDsgInzsd2jCMDd" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1912,339.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" Password="notasecret" Services="Unselected">
+      <uga:GSuiteApplicationScope ApiKey="{x:Null}" ContinueOnError="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" AuthenticationType="OAuthClientID" CredentialID="392324365050-o5m38vib04p5h99293krh6450eerktl1.apps.googleusercontent.com" CredentialSecret="aE_-IZUvNdDsgInzsd2jCMDd" DataStoreLocation="Local disk" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="1607.2,339.2" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" Password="notasecret" Services="Unselected">
         <uga:GSuiteApplicationScope.AuthenticationScopes>
           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
         </uga:GSuiteApplicationScope.AuthenticationScopes>
@@ -222,7 +203,22 @@
           </ActivityAction>
         </uga:GSuiteApplicationScope.Body>
       </uga:GSuiteApplicationScope>
-      <Assign sap:VirtualizedContainerService.HintSize="1912,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <ui:DatabaseConnect DatabaseConnection="[con]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="1607.2,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=rpa_test;uid=root" />
+      <Assign sap:VirtualizedContainerService.HintSize="1607.2,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">AC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[con]" sap:VirtualizedContainerService.HintSize="1607.2,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;update tasks set status=&quot; +&quot;'&quot;+status+&quot;'&quot;+&quot;where id =&quot;+task_id.ToString]">
+        <ui:ExecuteQuery.Parameters>
+          <InArgument x:TypeArguments="x:String" x:Key="status">AC</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="task_id">[task_id]</InArgument>
+        </ui:ExecuteQuery.Parameters>
+      </ui:ExecuteQuery>
+      <Assign sap:VirtualizedContainerService.HintSize="1607.2,60" sap2010:WorkflowViewState.IdRef="Assign_6">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[x]</OutArgument>
         </Assign.To>
@@ -230,52 +226,28 @@
           <InArgument x:TypeArguments="x:Int32">2</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:BuildDataTable DataTable="[synop]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1912,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Team_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Synopsis_x0020_file_x0020_present_x0020_or_x0020_not&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[new_data_out]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1912,3301.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:BuildDataTable DataTable="[synop]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1607.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Team_x0020_Name&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Synopsis_x0020_file_x0020_present_x0020_or_x0020_not&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[new_data_out]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1607.2,2316.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1862.4,3152.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1557.6,2168" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[(row.Item(11).ToString()=&quot;Y&quot;)]" sap:VirtualizedContainerService.HintSize="1820.8,2960" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[(row.Item(11).ToString()=&quot;Y&quot;)]" sap:VirtualizedContainerService.HintSize="1516,1975.2" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="1676.8,2810.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence sap:VirtualizedContainerService.HintSize="1372,1825.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1635.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[row.Item(1).ToString]" />
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1635.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_21" Text="[row.Item(&quot;Dummy Drive link&quot;)]" />
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
-                    <Assign sap:VirtualizedContainerService.HintSize="1635.2,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign sap:VirtualizedContainerService.HintSize="1330.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[o]</OutArgument>
                       </Assign.To>
@@ -283,13 +255,13 @@
                         <InArgument x:TypeArguments="x:String">[row.Item("Dummy Drive link").ToString]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="1635.2,2075.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" Version="V1">
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="1330.4,1632.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" Version="V1">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1601.6,1858.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1296.8,1416" sap2010:WorkflowViewState.IdRef="Sequence_15">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="text" />
                             </Sequence.Variables>
@@ -298,7 +270,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ClickType="Double" DisplayName="Click 'Minor'" sap:VirtualizedContainerService.HintSize="1560,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                            <uix:NClick ClickType="Double" DisplayName="Click 'Minor'" sap:VirtualizedContainerService.HintSize="1255.2,167.2" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/folders/1H-milotjL0ISMia8zXEvP6r4nE9efRfd" DesignTimeRectangle="626, 316, 266, 60" FriendlyName="'Minor'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid=':19' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' type='' parentid=':19' tag='DIV' aaname='' check:text='Minor' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ4AAABACAYAAADrlJkNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUCSURBVHhe7d3vS1tXGMDx/Xf5F/KujFHaycbaDSrbHOuCrEUwMBTGIiv2hXkzoXTbCze67EXjhICzr+I2QpkuVotDml6EBgLPznO8J57IVXNWc7zV7wcOJvdH8up+uffcq74lABCIcAAIlhmOTieR9taOtJ5uyl+tvxkMxiUbeuxrA7QFWQbC8arblc32trSfPZck2Zder5euAXCZ6LGvDdAWaBO0Db5+OHSFVuZF52W6BADENkHb4MejHw6tCtEAkEXboI1wbDjsnIY5JQGA42gj3JyHDYdOguj1DAAcx855mFYoGw69fmEiFMBJtBHaCmXDobdfAOA0rhWEA8DQCAeAYIQDQDDCASAY4QAQjHAACEY4AAQjHACCEQ4AwQgHgGCEA0AwwgEgGOEAECxqOB7Xf5OPxj+VK+9cP3a8+/5N2dj8J90DQB5FC4fGICsUWYN4APkWLRwPHv6QGYnjhsbjwcMfhxqPl1dkf5+/XAbEkttwhI7Pbk8SDyCSCxMOHTqHMjpNqRYKUtAxtyaD/10i1V2TittmoZku3JbaF0UpfFCVVuZOwJvnQoVDv2N0vHAUKrKWEYHuaiVd74djT+pThAMXyxsRjq9mvpbV35/ITz//Itffu5m5jY4o4SgWpWh+VlaPVqAra3OH6w/DAVw8uQ+HRsN30t2ZKOGYrEp10vycacjAf9NMGjJr1pcWqlIaCMee1HT7QtV8woHmgr4vydKTulQ+v2pDU7x2V74/ekqy05Dq9A25op9XvCoTczXZ8L5079eSPbuZf9SQyi1zVjNZM98GjF7uw7H+x5/pJxyauD2ZuW2ccNSkaQ/YWWl4B3GyMmtjUFuvDRkOjcG4lO8vyuJcKY3D4TayU5O7RbPs7ZJUvvO28S55XDh0FK+Ny/g3DcKBKHIfjqwJz+MuV2KFY69Tl7J5PbviypFIY8asm65LsjtsOMZksZUuMJr3ddm4LG3pO3PZc8+cQRzZZvvRQSjKywff68Jxw3wX0yeIKffhOPow2Ny385nb6YgSjo+XZNuEoj5tXrvLlfQyxR7QrUUZGyoc5uxkN11guLOQ6rq+a0lVzzbGFs0rj4tSelfHheNgHyCe3IfDDX1OQyOStc6NKOFIA5Asl83rstQ77nV66bJetQfz64XDO7uxa52mzHvLCQfOS+7DofMZepah++v4cmr6fC9VXAD6Zxkbg2cfZxKOU8440u8iHDgvuQ2HBmJ3999070H6hGjWrdmo4XDzGhMTMmGW92/Pnkk43BzHjaHmOAgHYstlOD689Um618k0Hv5+ccPhP/DlPRB2JuEwAu6qEA7Elstw6NnGMPRWrb9f7HC4R8yL97xH0M8qHGrI5zgIB2LLZTh0EvTOVPnUoROm/n6jDQcAJ5fh+L+DcABxRAvH0cuKUQz++A8QR7RwKH0KVCc+sw761xn6maP9lXoAvqjhAHAxEA4AwQgHgGCEA0AwwgEgGOEAEIxwAAhGOAAEIxwAghEOAMEIB4BghANAMMIBIBjhABBsIBytp5vS6/XsAgDIoo3QVigbjvbWjiTJvl0AAFm0EdoKZcPR6STSfvbcLgCALNoIbYWy4VCb7W150XmZvgOAQ9oGbYTTD8erbtdevxAPAD5tgrZBG+H0w6F0hVZFT0n0eoYJU+By0mPfzmmYFmgT/GiogXA4ds5ja8dWRm+/MBiMyzX02NcGuDmNQSL/AVennwyNxjqbAAAAAElFTkSuQmCC" InformativeScreenshot="d55557382e508a73de3c226cf25e055f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='P7_ProjectShortName_Raghav_Umang_Vastavik_Samar_Sahil - Google Drive' /&gt;" SearchSteps="FuzzySelector, Image" Text="Minor" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='DIV' /&gt;">
                                   <uix:TargetAnchorable.Anchors>
@@ -310,7 +282,7 @@
                                 </uix:TargetAnchorable>
                               </uix:NClick.Target>
                             </uix:NClick>
-                            <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'P7_FACULTYASSISTANT_Ide…'" sap:VirtualizedContainerService.HintSize="1560,167.2" sap2010:WorkflowViewState.IdRef="NGetText_1" Timeout="5">
+                            <uix:NGetText ContinueOnError="True" DisplayName="Get Text 'P7_FACULTYASSISTANT_Ide…'" sap:VirtualizedContainerService.HintSize="1255.2,167.2" sap2010:WorkflowViewState.IdRef="NGetText_1" Timeout="5">
                               <uix:NGetText.Target>
                                 <uix:TargetAnchorable BrowserURL="https://drive.google.com/drive/folders/1ZAmT1L8VS-GjcLGLzMGLYyZ1TJ2J0beh" DesignTimeRectangle="981, 549, 196, 19" ElementType="Text" FriendlyName="'P7_FACULTYASSISTANT_Syn…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='6' isleaf='1' parentid=':3o' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' type='' isleaf='1' parentid=':3o' tag='DIV' /&gt;" ImageBase64="" InformativeScreenshot="79aac13b623793ed27f66a8a732c0903.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Minor - Google Drive' /&gt;" SearchSteps="FuzzySelector" Text="P7_FACULTYASSISTANT_Synopsis.docx" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='DIV' /&gt;">
                                   <uix:TargetAnchorable.Anchors>
@@ -324,30 +296,18 @@
                                 <OutArgument x:TypeArguments="x:String">[text]</OutArgument>
                               </uix:NGetText.Text>
                             </uix:NGetText>
-                            <If Condition="[text&lt;&gt;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="1560,1349.6" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If Condition="[text&lt;&gt;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="1255.2,907.2" sap2010:WorkflowViewState.IdRef="If_3">
                               <If.Then>
-                                <If Condition="[text.Contains(&quot;Synopsis&quot;)]" sap:VirtualizedContainerService.HintSize="1039.2,1198.4" sap2010:WorkflowViewState.IdRef="If_4">
+                                <If Condition="[text.Contains(file_match)]" sap:VirtualizedContainerService.HintSize="836,756" sap2010:WorkflowViewState.IdRef="If_4">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="476.8,595.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,324" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_16" Text="[&quot;Synopsis Exists&quot;]" />
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                      </ui:CommentOut>
-                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;Y&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                                      <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="435.2,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;Y&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                      <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
                                         <uix:NClick.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="1871, 7, 58, 37" ElementType="Button" FriendlyName="'push button  Close'" FullSelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl automationid='' name='Close' role='push button' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAApCAYAAABtEppnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAECSURBVGhD7dQxCsJAEIXhPYg5gNG7KdiKYCuCVxMbO8FGEILgCVYmOLDCIwrJ7sjkPfirTPNhYuA4zvfiyPZmh3C7N3EMNY/nJ/xyvcUxJHjCZejIY4Tr0JHHCNehI48RrkNHHiNch46GblrP4vF0hs/S5KaezeNuf4DP+2QCF8g3fE60ZPaqd+FzoyXTbxzhS6Al8z+3FF8KLZnDJcWXQkt/AZdfelJVbelrnzNzePp6p689uh0yUzj6pkvhzeAIrZXAm8C70FpuvAlcQF1oLSfeBP4LWltvtnGxXMFnfTL9c7OMcB068hjhOnTkMcJ16MhjhOvQkccI16EjjxHeLoQXfgFtM8KBt+MAAAAASUVORK5CYII=" InformativeScreenshot="1a66b5531529ce51993bf5a11d946b8f.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Minor - Google Drive - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA">
                                             <uix:TargetAnchorable.Anchors>
@@ -362,47 +322,24 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="518.4,1047.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="416.8,604.8" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="476.8,952.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="375.2,510.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_8">
-                                          <ui:CommentOut.Body>
-                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_17" Text="[&quot;Synopsis doesn't exist&quot;]" />
-                                            </Sequence>
-                                          </ui:CommentOut.Body>
-                                        </ui:CommentOut>
-                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,317.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                          <ui:CommentOut.Body>
-                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,239.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="You have not submitted your synopsis yet" DisplayName="Send SMTP Mail Message" Email="facultyrpa@gmail.com" EnableSSL="True" From="facultyrpa@gmail.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Faculty Assistant MIET" Password="@mietjammu" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Synopsis Submission" To="[email_dum]">
-                                                <ui:SendMail.Files>
-                                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                </ui:SendMail.Files>
-                                              </ui:SendMail>
-                                            </Sequence>
-                                          </ui:CommentOut.Body>
-                                        </ui:CommentOut>
-                                        <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="435.2,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;You have not submitted your &quot;+file_match]" DisplayName="Send SMTP Mail Message" Email="facultyrpa@gmail.com" EnableSSL="True" From="facultyrpa@gmail.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Name="Faculty Assistant MIET" Password="@mietjammu" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="File Submission" To="[row(&quot;Email&quot;).ToString]">
+                                          <ui:SendMail.Files>
+                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                          </ui:SendMail.Files>
+                                        </ui:SendMail>
+                                        <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
                                           <uix:NClick.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="1871, 7, 58, 37" ElementType="Button" FriendlyName="'push button  Close'" FullSelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl automationid='' name='Close' role='push button' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAApCAYAAABtEppnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAECSURBVGhD7dQxCsJAEIXhPYg5gNG7KdiKYCuCVxMbO8FGEILgCVYmOLDCIwrJ7sjkPfirTPNhYuA4zvfiyPZmh3C7N3EMNY/nJ/xyvcUxJHjCZejIY4Tr0JHHCNehI48RrkNHHiNch46GblrP4vF0hs/S5KaezeNuf4DP+2QCF8g3fE60ZPaqd+FzoyXTbxzhS6Al8z+3FF8KLZnDJcWXQkt/AZdfelJVbelrnzNzePp6p689uh0yUzj6pkvhzeAIrZXAm8C70FpuvAlcQF1oLSfeBP4LWltvtnGxXMFnfTL9c7OMcB068hjhOnTkMcJ16MhjhOvQkccI16EjjxHeLoQXfgFtM8KBt+MAAAAASUVORK5CYII=" InformativeScreenshot="1594cfdfb10418bb367dfde0ccf835ed.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Minor - Google Drive - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA">
                                               <uix:TargetAnchorable.Anchors>
@@ -413,48 +350,25 @@
                                             </uix:TargetAnchorable>
                                           </uix:NClick.Target>
                                         </uix:NClick>
-                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;N&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;N&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                                       </Sequence>
                                     </Sequence>
                                   </If.Else>
                                 </If>
                               </If.Then>
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="476.8,952.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <Sequence sap:VirtualizedContainerService.HintSize="375.2,510.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,231.2" sap2010:WorkflowViewState.IdRef="CommentOut_9">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,152.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_15" Text="[&quot;File doesn't exist&quot;]" />
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                  </ui:CommentOut>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,317.6" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,239.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="You have not submitted your synopsis yet" DisplayName="Send SMTP Mail Message" Email="facultyrpa@gmail.com" EnableSSL="True" From="facultyrpa@gmail.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Name="Faculty Assistant MIET" Password="@mietjammu" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Synopsis Submission" To="[email_dum]">
-                                          <ui:SendMail.Files>
-                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                          </ui:SendMail.Files>
-                                        </ui:SendMail>
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                  </ui:CommentOut>
-                                  <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="435.2,167.2" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
+                                  <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;You have not submitted your &quot;+file_match]" DisplayName="Send SMTP Mail Message" Email="facultyrpa@gmail.com" EnableSSL="True" From="facultyrpa@gmail.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Name="Faculty Assistant MIET" Password="@mietjammu" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="File Submission" To="[row(&quot;Email&quot;).ToString]">
+                                    <ui:SendMail.Files>
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                    </ui:SendMail.Files>
+                                  </ui:SendMail>
+                                  <uix:NClick ClickType="Single" DisplayName="Click 'push button  Close'" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left">
                                     <uix:NClick.Target>
                                       <uix:TargetAnchorable DesignTimeRectangle="1871, 7, 58, 37" ElementType="Button" FriendlyName="'push button  Close'" FullSelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Minor - Google Drive - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl automationid='' name='Close' role='push button' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAApCAYAAABtEppnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAECSURBVGhD7dQxCsJAEIXhPYg5gNG7KdiKYCuCVxMbO8FGEILgCVYmOLDCIwrJ7sjkPfirTPNhYuA4zvfiyPZmh3C7N3EMNY/nJ/xyvcUxJHjCZejIY4Tr0JHHCNehI48RrkNHHiNch46GblrP4vF0hs/S5KaezeNuf4DP+2QCF8g3fE60ZPaqd+FzoyXTbxzhS6Al8z+3FF8KLZnDJcWXQkt/AZdfelJVbelrnzNzePp6p689uh0yUzj6pkvhzeAIrZXAm8C70FpuvAlcQF1oLSfeBP4LWltvtnGxXMFnfTL9c7OMcB068hjhOnTkMcJ16MhjhOvQkccI16EjjxHeLoQXfgFtM8KBt+MAAAAASUVORK5CYII=" InformativeScreenshot="1594cfdfb10418bb367dfde0ccf835ed.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Minor - Google Drive - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA">
                                         <uix:TargetAnchorable.Anchors>
@@ -465,7 +379,7 @@
                                       </uix:TargetAnchorable>
                                     </uix:NClick.Target>
                                   </uix:NClick>
-                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;N&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="435.2,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(1).ToString(),&quot;N&quot;}]" DataTable="[synop]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                 </Sequence>
                               </If.Else>
                             </If>
@@ -479,7 +393,7 @@
                   </Sequence>
                 </If.Then>
               </If>
-              <Assign sap:VirtualizedContainerService.HintSize="1820.8,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign sap:VirtualizedContainerService.HintSize="1516,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[x]</OutArgument>
                 </Assign.To>
@@ -492,23 +406,30 @@
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
     </Sequence>
-    <ui:OutputDataTable Text="{x:Null}" DataTable="[synop]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1953.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" />
-    <ui:PathExists DisplayName="Path Exists" Exists="[ispresent]" sap:VirtualizedContainerService.HintSize="1953.6,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[root_data_path+&quot;\&quot;+sheet+&quot;_&quot;+task_id.ToString+&quot;.csv&quot;]" PathType="File" />
-    <If Condition="[ispresent]" sap:VirtualizedContainerService.HintSize="1953.6,209.6" sap2010:WorkflowViewState.IdRef="If_5">
-      <If.Then>
-        <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[root_data_path+&quot;\&quot;+sheet+&quot;_&quot;+task_id.ToString+&quot;.csv&quot;]" />
-      </If.Then>
-    </If>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[synop]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[root_data_path+&quot;\&quot;+sheet+&quot;_&quot;+task_id.ToString+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="1953.6,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1953.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DatabaseConnect.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="task_id">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="task_id" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="status">
-          <Literal x:TypeArguments="x:String">CO</Literal>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:OutputDataTable Text="{x:Null}" DataTable="[synop]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1648.8,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[synop]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[root_data_dir+&quot;\&quot;+sheet+ task_id.toString +&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="1648.8,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="The attached file contains the list of students who have not submitted the file" DisplayName="Send SMTP Mail Message" Email="facultyrpa@gmail.com" EnableSSL="True" From="facultyrpa@gmail.com" sap:VirtualizedContainerService.HintSize="1648.8,146.4" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Name="Faculty Assistant MIET" Password="@mietjammu" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Document not submitted" To="[faculty_mail_id]">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="root_data_dir+&quot;\&quot;+sheet+ task_id.toString +&quot;.csv&quot;" />
+          </InArgument>
+        </scg:List>
+      </ui:SendMail.Files>
+    </ui:SendMail>
+    <Assign sap:VirtualizedContainerService.HintSize="1648.8,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[status]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">CO</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[con]" sap:VirtualizedContainerService.HintSize="1648.8,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;update tasks set status=&quot; +&quot;'&quot;+status+&quot;'&quot;+&quot;where id =&quot;+task_id.ToString]">
+      <ui:ExecuteQuery.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="status">CO</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="task_id">[task_id]</InArgument>
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
   </Sequence>
 </Activity>
