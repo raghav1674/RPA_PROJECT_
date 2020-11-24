@@ -6,7 +6,7 @@
 
 - [EXCEL DOCUMENT](WebApp/static/files/template_monitor.xlsx)
 - [DOCUMENT DETECTION](WebApp/static/files/template_document.xlsx)
-https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/admin
+
 > It has the admin page and the user page and visuals using dash app for the user.
 > Admin can create users and the users can assign the Task.
 > SQLALCHEMY ORM is used.
