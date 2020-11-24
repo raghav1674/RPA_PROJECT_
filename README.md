@@ -4,9 +4,9 @@
 > It has two bots one for monitoring the updates in the excel sheet and other one is to check for some document like ppt and synposis presence in some drive.
 > The sheets should be in the specific format , the format is provided in the below links:
 
-- [EXCEL DOCUMENT](static/files/template_monitor.xlsx)
-- [DOCUMENT DETECTION](static/files/template_document.xlsx)
-
+- [EXCEL DOCUMENT](WebApp/static/files/template_monitor.xlsx)
+- [DOCUMENT DETECTION](WebApp/static/files/template_document.xlsx)
+https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/admin
 > It has the admin page and the user page and visuals using dash app for the user.
 > Admin can create users and the users can assign the Task.
 > SQLALCHEMY ORM is used.
@@ -19,38 +19,38 @@
         - Samar Kant Bhasin
         - Sahil Singh
 
-- [MAIN APP FILE](app.py)
+- [MAIN APP FILE](WebApp/app.py)
 
-- [FORM CLASS FILES](forms.py)
+- [FORM CLASS FILES](WebApp/forms.py)
 
-- [GRAPH PROGRAM](graph.py)
+- [GRAPH PROGRAM](WebApp/graph.py)
 
-- [SCHEDULING PROGRAM](apis/sched.py)
+- [SCHEDULING PROGRAM](WebApp/apis/sched.py)
 
-- [GSHEET VALIDATION PROGRAM](apis/gsheet.py)
+- [GSHEET VALIDATION PROGRAM](WebApp/apis/gsheet.py)
 
-- [TEMPLATES](templates/)
+- [TEMPLATES](WebApp/templates/)
 
-  - [HOMEPAGE](templates/index.html)
+  - [HOMEPAGE](WebApp/templates/index.html)
 
-  - [LOGIN PAGE](templates/login.html)
+  - [LOGIN PAGE](WebApp/templates/login.html)
 
-  - [ADMIN LOGIN PAGE](templates/admin/index.html)
+  - [ADMIN LOGIN PAGE](WebApp/templates/admin/index.html)
 
-  - [ASSIGN TASK PAGE](templates/task.html)
+  - [ASSIGN TASK PAGE](WebApp/templates/task.html)
 
-  - [DASHBOARD PAGE](templates/dashboard.html)
+  - [DASHBOARD PAGE](WebApp/templates/dashboard.html)
 
-  - [CUSTOM 404 PAGE](templates/404.html)
+  - [CUSTOM 404 PAGE](WebApp/templates/404.html)
 
-- [STATIC FILES](static/)
+- [STATIC FILES](WebApp/static/)
 
-- **DATABASE**: [mysql](db)
+- **DATABASE**: [mysql](WebApp/db)
 
             - tasks table
             - users table
 
-### CONFIGURATION FILE (config.py):
+### CONFIGURATION FILE (WebApp/config.json):
 
 '''json
 
