@@ -8,3 +8,7 @@ dateutils
 dash
 dash_bootstrap_components
 plotly
+email_validator
+passlib
+cryptography
+flask_admin

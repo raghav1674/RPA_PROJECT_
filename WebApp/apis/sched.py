@@ -4,15 +4,19 @@ import datetime
 
 ### CREDENTIALS:
 
+with open(r"D:\c_data\future\MYPROJECTS\RPA\WebApp\config.json") as fp:
+    params = json.load(fp)["params"]
 
-tenant_name = "TENANT_NAME"
+print(params)
 
-account_logical_name="ACCOUNT LOGICAL NAME"
+tenant_name = params["ORCHESTRATOR_TENANT_NAME"]
+
+account_logical_name= params["ORCHESTRATOR_ACCOUNT_LOGICAL_NAME"]
 
 
-refresh_token = "USER KEY"
+refresh_token = params["ORCHESTRATOR_ACCOUNT_USER_KEY"] #user_key
  
-client_id  =  "CLIENT ID"
+client_id  =  params["ORCHESTRATOR_ACCOUNT_CLIENT_ID"]
 
 
 
@@ -20,6 +24,7 @@ client_id  =  "CLIENT ID"
 def schedule_tasks(bot_name,trigger_name,input_arguments,curr_hour,stop_date,long_running):
     
     access_token = auth()
+    
     
     release_info = process_info(access_token)
     
@@ -152,6 +157,7 @@ def auth():
     
     url="https://account.uipath.com/oauth/token"
 
+   
     data={
         
         "grant_type": "refresh_token",
@@ -163,11 +169,16 @@ def auth():
         "Content-Type": "application/json",
         "X-UIPATH-TenantName": tenant_name
     }
+    
+ 
+    
     response = requests.post(url,data=json.dumps(data),headers=headers)
 
+    print(json.loads(response.text))
 
     access_token = json.loads(response.text)["access_token"]
     
+  
     
     return access_token
 
@@ -288,4 +299,6 @@ def process_info(access_token):
 
 
 # print(requests.delete(schedule_stop_url,headers=process_headers).text)
+
+
 

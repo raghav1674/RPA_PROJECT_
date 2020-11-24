@@ -1,7 +1,17 @@
 # RPA FACULTY ASSISTANT
 
+> It is a web application made in flask framework and is integrated with the RPA(Robottic Porcess Automation) using the UiPATH Orchestrator Api and Gsheet Api.
+> It has two bots one for monitoring the updates in the excel sheet and other one is to check for some document like ppt and synposis presence in some drive.
+> The sheets should be in the specific format , the format is provided in the below links:
 
-#### Team Members:
+- [EXCEL DOCUMENT](static/files/template_monitor.xlsx)
+- [DOCUMENT DETECTION](static/files/template_document.xlsx)
+
+> It has the admin page and the user page and visuals using dash app for the user.
+> Admin can create users and the users can assign the Task.
+> SQLALCHEMY ORM is used.
+
+#### Team Members
 
         - Raghav Gupta
         - Umang Bhan
@@ -9,45 +19,85 @@
         - Samar Kant Bhasin
         - Sahil Singh
 
-- [MAIN APP FILE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/app.py)
+- [MAIN APP FILE](app.py)
 
-- [FORM CLASS FILES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/forms.py)
+- [FORM CLASS FILES](forms.py)
 
-- [GRAPH PROGRAM](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/graph.py)
-   
-- [SCHEDULING PROGRAM](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/apis/sched.py)
+- [GRAPH PROGRAM](graph.py)
 
+- [SCHEDULING PROGRAM](apis/sched.py)
 
-- [TEMPLATES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates)
+- [GSHEET VALIDATION PROGRAM](apis/gsheet.py)
 
-    - [HOMEPAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/index.html)
+- [TEMPLATES](templates/)
 
-    - [LOGIN PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/login.html)
+  - [HOMEPAGE](templates/index.html)
 
-    - [REGISTER PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/register.html)
+  - [LOGIN PAGE](templates/login.html)
 
-    - [ASSIGN TASK PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/task.html)
+  - [ADMIN LOGIN PAGE](templates/admin/index.html)
 
-    - [DASHBOARD PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/dashboard.html)
+  - [ASSIGN TASK PAGE](templates/task.html)
 
-    - [CUSTOM 404 PAGE](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/templates/404.html)
- 
-- [STATIC FILES](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/static)
+  - [DASHBOARD PAGE](templates/dashboard.html)
 
-[BOTS](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/Bots/)
-    
-    - EXCEL MONITOR 
-    - SYNOPSIS DOCUMENT DETECTION
-    - PPT DOCUMENT DETECTION
+  - [CUSTOM 404 PAGE](templates/404.html)
 
-- **DATABASE**: [mysql](https://github.com/MIETDevelopers/2017_CSEA2_P7_RPA_FacultyAssistant_Raghav_Umang_Vastavik_Samar_Sahil/tree/master/WebApp/db)
+- [STATIC FILES](static/)
+
+- **DATABASE**: [mysql](db)
 
             - tasks table
             - users table
 
-- **ROOT DATA FOLDER**: the path to the folder from where the graphs are formed.(/data)
+### CONFIGURATION FILE (config.py):
 
-#### REQUIRED CREDENTIALS:
+'''json
+
+      "LOCALHOST":true,
+
+      "LOCALHOST_SQLALCHEMY_DATABASE_URI":"", // mysql server url for localhost
+
+      "PROD_SQLALCHEMY_DATABASE_URI":"mysql production server url ",
+
+
+      "DATA_ROOT_DIR":"./data/", // Data directory where all the excel files for processing and visuals will be created.
+
+
+        "BOT_ROOT_DIR":"./bots/",  // Path of the Bots folder
+
+
+        "APP_SECRET_KEY":"secret1234",  //Secret key to avoid csrf attack
+
+
+        "ADMIN_EMAIL":" ",  // Admin email id
+
+
+        "ADMIN_PASSWORD":" ", admin password
+
+
+        "OAUTH_CREDENTIALS_FILE_PATH": "",   // oauth credntials used for gsheet activity should be in
+
+                                                                                                        %APPDATA%\Roaming\\gspread\\credentials.json
+                                                                                                    also used for gsuite activity in UIRobot
+
+            Credentials used for scheduling
+
+        "ORCHESTRATOR_TENANT_NAME": "", // orchestrator Tenant name
+
+        "ORCHESTRATOR_ACCOUNT_LOGICAL_NAME": "", // orchestrator Acoount logical name
+
+        "ORCHESTRATOR_ACCOUNT_USER_KEY": "",  // user key
+
+        "ORCHESTRATOR_ACCOUNT_CLIENT_ID": "" client id
+
+'''
+
+### REQUIRED CREDENTIALS:
 
 - **OAUTH CREDENTIALS**: required for gsuite activity.
-- **MACHINE KEY , TENANT NAME, ACCOUNT LOGICAL NAME ,USER KEY AND CLIENT ID** : for scheduling bots using Orchestrator
+- **MACHINE KEY , TENANT NAME, USER KEY AND CLIENT ID** : scheduling bots using Orchestrator
+
+- UIPATH STUDIO should be installed on the system.
+
+- Python 3.4 and above should be installed.

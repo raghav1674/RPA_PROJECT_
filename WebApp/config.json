@@ -1,0 +1,49 @@
+{
+
+    "params":{
+
+        "LOCALHOST":true,
+
+        "LOCALHOST_SQLALCHEMY_DATABASE_URI":"mysql://root:@localhost/rps_new",
+        
+        "PROD_SQLALCHEMY_DATABASE_URI":"",
+
+
+        "DATA_ROOT_DIR":"./data/",
+        
+
+        "BOT_ROOT_DIR":"./bots/",
+        
+
+        "APP_SECRET_KEY":"secret1234",
+        
+        
+        "ADMIN_EMAIL":"facultyrpa@gmail.com",
+
+
+        "ADMIN_PASSWORD":"@mietjammu",
+   
+        
+        "OAUTH_CREDENTIALS_FILE_PATH": "C:\\Users\\Raghav Gupta\\AppData\\Roaming\\gspread",  
+
+
+
+        "ORCHESTRATOR_TENANT_NAME": "MIETDefault",
+
+        "ORCHESTRATOR_ACCOUNT_LOGICAL_NAME": "mietaltmzhr",
+
+        "ORCHESTRATOR_ACCOUNT_USER_KEY": "_OpOjaEwGjbahEdPRyCOG34v_X7-3i8t5ZQ4ztifCtA1y",
+
+        "ORCHESTRATOR_ACCOUNT_CLIENT_ID": "8DEv1AMNXczW3y4U15LL3jYf62jK93n5"
+
+
+
+
+    }
+
+
+
+
+
+}
+

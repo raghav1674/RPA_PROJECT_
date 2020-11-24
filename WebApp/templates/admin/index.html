@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+
+  {% block title %}Login Page {% endblock %}
+
+
+
+  {% block body %}
+
+  {% block nav %}
+
+  {% endblock %}
+
+  {% from "includes/_formhelper.html" import render_field %}
+  
+  <link rel="stylesheet" href="{{ url_for('static',filename='style/style.css')}}">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="{{url_for('static',filename='images/bot-login-1.jpg')}}" id="icon" alt="User Icon" />
+      </div>
+
+      <!-- Login Form -->
+      <form action=" " method="POST" class="form" >
+        <input type="text" id="login" class="fadeIn second" name="admin_email" placeholder="email address">
+        <input type="text" id="password" class="fadeIn third" name="admin_pass" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+       
+
+      
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block footer %} {% endblock %}

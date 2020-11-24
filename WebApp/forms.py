@@ -3,7 +3,8 @@ import email_validator
 from wtforms.fields.html5 import EmailField, DateField
 from wtforms_components import DateRange
 import datetime
-
+# to validate the format of the sheet and the presence of the sheet in the url provided
+from apis.gsheet import validate_sheet
 from validator_collection import checkers
 
 
@@ -44,11 +45,11 @@ class TaskForm(Form):
 
     end_date = DateField("End Date", validators=[DateRange(
         min=datetime.date.today()), validators.DataRequired()], format='%Y-%m-%d')
-    
-    sheet_name = StringField('Sheet Name',[validators.DataRequired()])
+
+    sheet_name = StringField('Sheet Name', [validators.DataRequired()])
     sheet_url = StringField('Sheet Url', [validators.DataRequired()])
     bot_assigned = RadioField('Bot Type', choices=[
-                              'Monitor the Excel Sheet', 'Document PPT Detection','Synopsis Document Detection'])
+                              'Monitor the Excel Sheet', 'Document PPT Detection', 'Synopsis Document Detection'])
 
     # it takes two paramters the self and the field which is to be validated.
     def validate_end_date(self, field):
@@ -62,8 +63,42 @@ class TaskForm(Form):
             raise validators.ValidationError(
                 "End Date should not be earlier than the Start Date")
 
+    # field is sheet_url and fiedl1 is sheet_name
     def validate_sheet_url(self, field):
-        if checkers.is_url(field.data):  # validating sheet url using this function
+        doc = 0
+        if "document" in self.bot_assigned.data.lower():
+            doc = 1
+
+        if checkers.is_url(field.data) and validate_sheet(self.sheet_url.data, self.sheet_name.data, doc)[0]:
+
             return True
         else:
-            raise validators.ValidationError("Enter the correct URL")
+            status, response = validate_sheet(
+                self.sheet_url.data, self.sheet_name.data, doc)
+
+            if status is False:  # means something is wrong.
+                error = "Invalid URL"
+                error = " ".join(response.split("_"))
+                if "NOT FOUND" in error:
+                    error = "GSheet URL Not Found"
+                # elif "PERMISSION" in error:
+                #     error=error.title()
+                # else:
+                #     error =" "
+            raise validators.ValidationError(error)
+
+    def validate_sheet_name(self, field):
+
+        if "document" in self.bot_assigned.data.lower():
+            status, response = validate_sheet(
+                self.sheet_url.data, self.sheet_name.data, doc=1)
+        else:
+            status, response = validate_sheet(
+                self.sheet_url.data, self.sheet_name.data)
+
+        if status is False:  # means something is wrong.
+            error = " ".join(response.split("_"))
+            if "NOT FOUND" in error:
+                error = "Sheet Not Found"
+            raise validators.ValidationError(error.title())
+        return True

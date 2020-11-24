@@ -5,14 +5,17 @@ import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
 import dash_bootstrap_components as dbc   # bootstrap components  for dash app
+import json
 
+with open("config.json") as fp:
+    params = json.load(fp)["params"]
 # data directory
-_data_path="./data/"
+_data_path = params["DATA_ROOT_DIR"]
 
 def show_graph(pathname):
 
     
-    print("PATNAME: ", pathname.split("/"))
+    # print("PATNAME: ", pathname.split("/"))
     
     task_id=pathname.split("/")[2]
     
@@ -22,7 +25,7 @@ def show_graph(pathname):
     actual_data_path=_data_path+task_name+"_"+task_id+".csv"
     
     
-    print(actual_data_path)
+    # print(actual_data_path)
     # path of the csv retireved by the bot.
     df = pd.read_csv(
         actual_data_path)
@@ -43,7 +46,7 @@ def show_graph(pathname):
             complete_loc+=1
                 
                 
-    print(df.iloc[complete_loc,:])
+    # print(df.iloc[complete_loc,:])
 
     # getting the row number of total pending 
     pending_loc = 0
@@ -59,24 +62,24 @@ def show_graph(pathname):
         else:
             pending_loc+=1
                 
-    print(df.iloc[pending_loc,:])
+    # print(df.iloc[pending_loc,:])
 
         
-    print(df.loc[-1:])
+    # print(df.loc[-1:])
 
     # student number who has completed the modules
     sc = df.iloc[complete_loc,:]
 
-    print(sc)
+    # print(sc)
     # student number who has not completed the modules
     st = df.iloc[pending_loc,:]
 
-    print(st)
+    # print(st)
     # module names
     modules = df.columns[3:-2]
 
     
-    print(modules)
+    # print(modules)
     # total students excluding the headers from top and bottom 3 fields
     student_count = len(df)-5
 
@@ -105,7 +108,7 @@ def show_graph(pathname):
     df = pd.DataFrame({"name": [i[0] for i in name_count],
                        "incomplete": [i[1] for i in name_count]})
     
-    print(df)
+    # print(df)
 
     # if length of df is greater than one then show this.
     if len(df) > 1:
